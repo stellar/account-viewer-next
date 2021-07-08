@@ -13,7 +13,7 @@
     "@ledgerhq/hw-app-str": "^6.1.0",
     "@ledgerhq/hw-transport-webusb": "^6.1.0",
     "@reduxjs/toolkit": "^1.6.0",
-    "@stellar/design-system": "^0.1.0-alpha.3",
+    "@stellar/design-system": "^0.2.1",
     "@stellar/freighter-api": "^1.0.1",
     "@stellar/wallet-sdk": "^0.4.0-rc.0",
     "amplitude-js": "^8.3.1",

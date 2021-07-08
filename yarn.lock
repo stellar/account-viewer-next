@@ -1688,15 +1688,13 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@stellar/design-system@^0.1.0-alpha.3":
-  version "0.1.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@stellar/design-system/-/design-system-0.1.0-alpha.3.tgz#02a9b0bb9cb31b8d2b10228d44be6d9d4b464569"
-  integrity sha512-5ckr+Xo9x+zaQaJOJrM57dsbLgR91nKaIRv4RPNPF/RjCFsU4CpWfXnD7YGMX0awaFNC6qZ4WyFDoabBco6NMg==
+"@stellar/design-system@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@stellar/design-system/-/design-system-0.2.1.tgz#0efffa978eb37f6dd232360ca7a24e0aae416586"
+  integrity sha512-9KfwboLHTcboXoCZg5gOYYsGUuHif/+P+Dey1+YR4SfHoDV2MJiKr/CXyvq1/EAH/WRT99S1XtgIdOEcGXdn1A==
   dependencies:
-    configurable-date-input-polyfill "^2.7.2"
-    normalize.css "^8.0.1"
-    react "^17.0.1"
-    react-dom "^17.0.1"
+    configurable-date-input-polyfill "^2.8.2"
+    stellar-identicon-js "^1.0.0"
 
 "@stellar/eslint-config@^2.0.1":
   version "2.0.1"
@@ -4101,10 +4099,10 @@ concurrently@^6.2.0:
     tree-kill "^1.2.2"
     yargs "^16.2.0"
 
-configurable-date-input-polyfill@^2.7.2:
-  version "2.8.1"
-  resolved "https://registry.yarnpkg.com/configurable-date-input-polyfill/-/configurable-date-input-polyfill-2.8.1.tgz#47c99eda1e6062571f46a39bfab6634949222f98"
-  integrity sha512-k7Ux/AGeN5kWyIWWHNZjTR2pVrY++VOEGBNvXBy06iiXK2jJ/56+XvOrap7mKHm4AUrZR8VJ2051kyJa+afBPw==
+configurable-date-input-polyfill@^2.8.2:
+  version "2.8.2"
+  resolved "https://registry.yarnpkg.com/configurable-date-input-polyfill/-/configurable-date-input-polyfill-2.8.2.tgz#825f946bba10889893d789e69b16f027711e94ef"
+  integrity sha512-RTap8vjy02Q4bkse6Lm4GrUlB37tt6/mqy2B6JT5ELkXAQF/qJoC+js+3mERGf3qoXe32Si9ZtKfSxa9Sz7a6A==
 
 confusing-browser-globals@^1.0.10:
   version "1.0.10"
@@ -8826,11 +8824,6 @@ normalize-url@^3.0.0:
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-3.3.0.tgz#b2e1c4dc4f7c6d57743df733a4f5978d18650559"
   integrity sha512-U+JJi7duF1o+u2pynbp2zXDW2/PADgC30f0GsHZtRh+HOcXHnw137TrNlyxxRvWW5fjKd3bcLHPxofWuCjaeZg==
 
-normalize.css@^8.0.1:
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-8.0.1.tgz#9b98a208738b9cc2634caacbc42d131c97487bf3"
-  integrity sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==
-
 npm-run-path@^2.0.0:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/npm-run-path/-/npm-run-path-2.0.2.tgz#35a9232dfa35d7067b4cb2ddf2357b1871536c5f"
@@ -10513,15 +10506,6 @@ react-dev-utils@^11.0.3:
     strip-ansi "6.0.0"
     text-table "0.2.0"
 
-react-dom@^17.0.1:
-  version "17.0.1"
-  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.1.tgz#1de2560474ec9f0e334285662ede52dbc5426fc6"
-  integrity sha512-6eV150oJZ9U2t9svnsspTMrWNyHc6chX0KzDeAOXftRa8bNeOKTTfCJ7KorIwenkHd2xqVTBTCZd79yk/lx/Ug==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
-    scheduler "^0.20.1"
-
 react-dom@^17.0.2:
   version "17.0.2"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-17.0.2.tgz#ecffb6845e3ad8dbfcdc498f0d0a939736502c23"
@@ -10657,14 +10641,6 @@ react-scripts@4.0.3:
     workbox-webpack-plugin "5.1.4"
   optionalDependencies:
     fsevents "^2.1.3"
-
-react@^17.0.1:
-  version "17.0.1"
-  resolved "https://registry.yarnpkg.com/react/-/react-17.0.1.tgz#6e0600416bd57574e3f86d92edba3d9008726127"
-  integrity sha512-lG9c9UuMHdcAexXtigOZLX8exLWkW0Ku29qPRU8uhF2R9BN96dLCt0psvzPLlHc5OWkgymP3qwTRgbnw5BKx3w==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
 
 react@^17.0.2:
   version "17.0.2"
@@ -11261,14 +11237,6 @@ saxes@^5.0.0:
   integrity sha512-5LBh1Tls8c9xgGjw3QrMwETmTMVk0oFgvrFSvWx62llR2hcEInrKNZ2GZCCuuy2lvWrdl5jhbpeqc5hRYKFOcw==
   dependencies:
     xmlchars "^2.2.0"
-
-scheduler@^0.20.1:
-  version "0.20.1"
-  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.20.1.tgz#da0b907e24026b01181ecbc75efdc7f27b5a000c"
-  integrity sha512-LKTe+2xNJBNxu/QhHvDR14wUXHRQbVY5ZOYpOGWRzhydZUqrLb2JBvLPY7cAqFmqrWuDED0Mjk7013SZiOz6Bw==
-  dependencies:
-    loose-envify "^1.1.0"
-    object-assign "^4.1.1"
 
 scheduler@^0.20.2:
   version "0.20.2"
