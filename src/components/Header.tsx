@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { ProjectLogo, TextButton } from "@stellar/design-system";
+import { Layout, TextLink } from "@stellar/design-system";
 
 import { ReactComponent as IconCopy } from "assets/svg/icon-copy.svg";
 import { resetStoreAction } from "config/store";
@@ -10,9 +10,7 @@ import { CopyWithTooltip } from "components/CopyWithTooltip";
 import {
   FONT_WEIGHT,
   HEADER_HEIGHT_REM,
-  HEADER_VERTICAL_PADDING_REM,
   MEDIA_QUERIES,
-  pageInsetStyle,
   PALETTE,
 } from "constants/styles";
 import { stopAccountWatcherAction } from "ducks/account";
@@ -20,26 +18,11 @@ import { stopTxHistoryWatcherAction } from "ducks/txHistory";
 import { getFormattedPublicKey } from "helpers/getFormattedPublicKey";
 import { useRedux } from "hooks/useRedux";
 
-const WrapperEl = styled.div`
-  @media (${MEDIA_QUERIES.headerFooterHeight}) {
-    padding: ${HEADER_VERTICAL_PADDING_REM}rem 0;
-  }
-`;
-
-const InsetEl = styled.div`
-  ${pageInsetStyle};
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-`;
-
 const BaseEl = styled.div`
   height: ${HEADER_HEIGHT_REM}rem;
   display: flex;
   align-items: center;
 `;
-
-const LogoWrapperEl = styled(BaseEl)``;
 
 const AccountWrapperEl = styled(BaseEl)`
   justify-content: center;
@@ -119,29 +102,29 @@ export const Header = () => {
   };
 
   return (
-    <WrapperEl>
-      <InsetEl>
-        <LogoWrapperEl>
-          <ProjectLogo title="Account Viewer" />
-        </LogoWrapperEl>
-
-        {isAuthenticated && account.data && (
-          <>
-            <AccountWrapperEl>
-              <Avatar publicAddress={account.data.id} />
-              <CopyWithTooltip copyText={account.data.id}>
-                <CopyPublicKeyButtonEl>
-                  {getFormattedPublicKey(account.data.id)}
-                  <IconCopy />
-                </CopyPublicKeyButtonEl>
-              </CopyWithTooltip>
-            </AccountWrapperEl>
-            <SignOutWrapperEl>
-              <TextButton onClick={handleSignOut}>Sign out</TextButton>
-            </SignOutWrapperEl>
-          </>
-        )}
-      </InsetEl>
-    </WrapperEl>
+    <Layout.Header
+      projectTitle="Account Viewer"
+      projectLink="https://stellar.org"
+      hasDarkModeToggle
+    >
+      {isAuthenticated && account.data && (
+        <>
+          <AccountWrapperEl>
+            <Avatar publicAddress={account.data.id} />
+            <CopyWithTooltip copyText={account.data.id}>
+              <CopyPublicKeyButtonEl>
+                {getFormattedPublicKey(account.data.id)}
+                <IconCopy />
+              </CopyPublicKeyButtonEl>
+            </CopyWithTooltip>
+          </AccountWrapperEl>
+          <SignOutWrapperEl>
+            <TextLink role="button" onClick={handleSignOut}>
+              Sign out
+            </TextLink>
+          </SignOutWrapperEl>
+        </>
+      )}
+    </Layout.Header>
   );
 };

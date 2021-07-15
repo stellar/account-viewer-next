@@ -5,6 +5,7 @@ import BigNumber from "bignumber.js";
 /**
  * Transforms StellarSdk.Signer to TrezorConnect.StellarTransaction.Signer
  */
+
 const transformSigner = (signer: {
   ed25519PublicKey?: string;
   sha256Hash?: string | Buffer;
@@ -36,6 +37,7 @@ const transformSigner = (signer: {
 /**
  * Transforms StellarSdk.Asset to TrezorConnect.StellarTransaction.Asset
  */
+
 const transformAsset = (asset: Asset) => {
   if (asset.isNative()) {
     return {
@@ -53,6 +55,7 @@ const transformAsset = (asset: Asset) => {
 /**
  * Transforms amount from decimals (lumens) to integer (stroop)
  */
+
 const transformAmount = (amount: string) =>
   new BigNumber(amount).times(10000000).toString();
 
@@ -60,6 +63,7 @@ const transformAmount = (amount: string) =>
  * Transforms StellarSdk.Operation.type to TrezorConnect.StellarTransaction
  * Operation.type
  */
+
 const transformType = (type: string) => {
   switch (type) {
     case "pathPaymentStrictReceive":
@@ -98,6 +102,7 @@ const transformMemo = (memo: { type: MemoType; value: MemoValue }) => {
  * Transforms StellarSdk.Transaction.timeBounds to
  * TrezorConnect.StellarTransaction.timebounds
  */
+
 const transformTimebounds = (
   timebounds:
     | {
@@ -119,6 +124,7 @@ const transformTimebounds = (
 /**
  * Transforms StellarSdk.Transaction to TrezorConnect.StellarTransaction
  */
+
 export const transformTransaction = (path: string, transaction: any) => {
   const amounts = [
     "amount",

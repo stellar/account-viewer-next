@@ -1,14 +1,7 @@
 import { useState, useEffect } from "react";
-import styled from "styled-components";
 import { useDispatch } from "react-redux";
-import {
-  Heading1,
-  TextButton,
-  TextButtonVariant,
-  TextLink,
-} from "@stellar/design-system";
+import { Heading1, TextLink, Modal } from "@stellar/design-system";
 
-import { Modal } from "components/Modal";
 import { NewKeyPairForm } from "components/NewKeyPairForm";
 import { SignInAlbedoForm } from "components/SignIn/SignInAlbedoForm";
 import { SignInLedgerForm } from "components/SignIn/SignInLedgerForm";
@@ -18,51 +11,12 @@ import { SignInTrezorForm } from "components/SignIn/SignInTrezorForm";
 import { WalletButton } from "components/WalletButton";
 
 import { wallets } from "constants/wallets";
-import { pageInsetStyle } from "constants/styles";
 import { resetAlbedoAction } from "ducks/wallet/albedo";
 import { resetLedgerAction } from "ducks/wallet/ledger";
 import { resetFreighterAction } from "ducks/wallet/freighter";
 import { resetTrezorAction } from "ducks/wallet/trezor";
 import { logEvent } from "helpers/tracking";
 import { ModalType } from "types/types.d";
-
-const WrapperEl = styled.div`
-  ${pageInsetStyle};
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 4rem;
-`;
-
-const WalletButtonsWrapperEl = styled.div`
-  width: 100%;
-  max-width: 590px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 3rem 0;
-
-  & > div {
-    margin-bottom: 1.5rem;
-    width: 100%;
-
-    @media (min-width: 700px) {
-      width: calc(50% - 1.75rem);
-    }
-  }
-`;
-
-const ButtonsWrapperEl = styled.div`
-  padding: 1.5rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  & > button {
-    margin-bottom: 0.5rem;
-  }
-`;
 
 export const Landing = () => {
   const dispatch = useDispatch();
@@ -120,10 +74,10 @@ export const Landing = () => {
   };
 
   return (
-    <WrapperEl>
+    <div className="Landing-container">
       <Heading1>Connect with a wallet</Heading1>
 
-      <WalletButtonsWrapperEl>
+      <div className="WalletButtons-container">
         {Object.keys(wallets).map((walletKey) => {
           const wallet = wallets[walletKey];
 
@@ -131,7 +85,7 @@ export const Landing = () => {
             <WalletButton
               key={walletKey}
               onClick={() => openModal(wallet.modalType)}
-              imageSrc={wallet.logoImg}
+              imageSvg={wallet.logoSvg}
               imageAlt={wallet.logoImgAltText}
               infoText={
                 <>
@@ -150,27 +104,31 @@ export const Landing = () => {
             </WalletButton>
           );
         })}
-      </WalletButtonsWrapperEl>
+      </div>
 
-      <ButtonsWrapperEl>
-        <TextButton
+      <div className="Landing-buttons-wrapper">
+        <TextLink
+          role="button"
           onClick={() => openModal(ModalType.SIGNIN_SECRET_KEY)}
-          variant={TextButtonVariant.secondary}
+          variant={TextLink.variant.secondary}
+          underline
         >
           Connect with a secret key
-        </TextButton>
+        </TextLink>
 
-        <TextButton
+        <TextLink
+          role="button"
           onClick={() => openModal(ModalType.NEW_KEY_PAIR)}
-          variant={TextButtonVariant.secondary}
+          variant={TextLink.variant.secondary}
+          underline
         >
           Generate key pair for a new account
-        </TextButton>
-      </ButtonsWrapperEl>
+        </TextLink>
+      </div>
 
       <Modal visible={activeModal !== null} onClose={closeModal}>
         {renderModalContent()}
       </Modal>
-    </WrapperEl>
+    </div>
   );
 };

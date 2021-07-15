@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { Button, ButtonVariant, InfoBlock } from "@stellar/design-system";
+import { Button, InfoBlock } from "@stellar/design-system";
 import { KeyType } from "@stellar/wallet-sdk";
 
 import { ModalWalletContent } from "components/ModalWalletContent";
@@ -98,7 +98,7 @@ export const SignInAlbedoForm = ({ onClose }: ModalPageProps) => {
           {!albedoStatus && (
             <Button onClick={fetchAlbedoLogin}>Connect with Albedo</Button>
           )}
-          <Button onClick={onClose} variant={ButtonVariant.secondary}>
+          <Button onClick={onClose} variant={Button.variant.secondary}>
             Cancel
           </Button>
         </>

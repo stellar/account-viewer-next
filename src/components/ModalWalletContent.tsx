@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Heading2, TextLink } from "@stellar/design-system";
 import { wallets } from "constants/wallets";
+import { renderSvg } from "helpers/renderSvg";
 
 const WrapperEl = styled.div`
   display: flex;
@@ -98,7 +99,10 @@ export const ModalWalletContent = ({
   return (
     <WrapperEl>
       <HeaderImageEl>
-        <img src={walletData.logoImg} alt={walletData.logoImgAltText} />
+        {renderSvg({
+          Component: walletData.logoSvg,
+          alt: walletData.logoImgAltText,
+        })}
       </HeaderImageEl>
       <HeaderEl>
         <HeadlineEl>{walletData.title}</HeadlineEl>

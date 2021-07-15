@@ -1,13 +1,10 @@
-import logoAlbedo from "assets/svg/logo-albedo.svg";
-import logoFreighter from "assets/svg/logo-freighter.svg";
-import logoLedger from "assets/svg/logo-ledger.svg";
-import logoTrezor from "assets/svg/logo-trezor.svg";
+import { Logo } from "@stellar/design-system";
 import { ModalType, Wallets } from "types/types.d";
 
 export const wallets: Wallets = {
   albedo: {
     title: "Connect with Albedo",
-    logoImg: logoAlbedo,
+    logoSvg: Logo.Albedo,
     logoImgAltText: "Albedo logo",
     modalType: ModalType.SIGNIN_ALBEDO,
     infoText: "Albedo is a browser wallet.",
@@ -16,16 +13,17 @@ export const wallets: Wallets = {
   },
   freighter: {
     title: "Connect with Freighter",
-    logoImg: logoFreighter,
+    logoSvg: Logo.Freighter,
     logoImgAltText: "Freighter logo",
     modalType: ModalType.SIGNIN_FREIGHTER,
-    infoText: "Freighter is a browser extension wallet. Available on Chrome and Firefox.",
+    infoText:
+      "Freighter is a browser extension wallet. Available on Chrome and Firefox.",
     infoLinkText: "Download",
     infoLink: "https://freighter.app",
   },
   ledger: {
     title: "Connect with Ledger",
-    logoImg: logoLedger,
+    logoSvg: Logo.Ledger,
     logoImgAltText: "Ledger logo",
     modalType: ModalType.SIGNIN_LEDGER,
     infoText: "Ledger is a Stellar-compatible hardware wallet.",
@@ -34,7 +32,7 @@ export const wallets: Wallets = {
   },
   trezor: {
     title: "Connect with Trezor",
-    logoImg: logoTrezor,
+    logoSvg: Logo.Trezor,
     logoImgAltText: "Trezor logo",
     modalType: ModalType.SIGNIN_TREZOR,
     infoText: "Trezor is a Stellar-compatible hardware wallet.",

@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import TrezorConnect from "trezor-connect";
-import { Button, ButtonVariant, InfoBlock } from "@stellar/design-system";
+import { Button, InfoBlock } from "@stellar/design-system";
 import { KeyType } from "@stellar/wallet-sdk";
 
 import { BipPathInput } from "components/BipPathInput";
@@ -124,7 +124,7 @@ export const SignInTrezorForm = ({ onClose }: ModalPageProps) => {
           {!trezorStatus && (
             <Button onClick={initTrezor}>Connect with Trezor</Button>
           )}
-          <Button onClick={onClose} variant={ButtonVariant.secondary}>
+          <Button onClick={onClose} variant={Button.variant.secondary}>
             Cancel
           </Button>
         </>

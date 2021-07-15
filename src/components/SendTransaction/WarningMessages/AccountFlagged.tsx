@@ -1,7 +1,7 @@
-import { InfoBlock, InfoBlockVariant } from "@stellar/design-system";
+import { InfoBlock } from "@stellar/design-system";
 
 export const AccountFlagged = ({ flagType = "" }) => (
-  <InfoBlock variant={InfoBlockVariant.error}>
+  <InfoBlock variant={InfoBlock.variant.error}>
     <p>
       This destination account has been flagged as being potentially {flagType}.
     </p>

@@ -1,0 +1,53 @@
+.Landing-container {
+  padding-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Landing-buttons-wrapper {
+  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & > a {
+    margin-bottom: 2rem;
+  }
+}
+
+.WalletButtons-container {
+  width: 100%;
+  max-width: 590px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 3rem 0;
+
+  & > div {
+    margin-bottom: 1.5rem;
+    width: 100%;
+
+    @media (min-width: 700px) {
+      width: calc(50% - 1.75rem);
+    }
+  }
+}
+
+.FooterButtons-stacked {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+
+  & > *:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+// TODO: look into specificity in Modal.Body
+.CopyKey-container {
+  margin-top: 2.5rem !important;
+  margin-bottom: 2rem !important;
+}

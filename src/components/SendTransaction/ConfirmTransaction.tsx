@@ -2,12 +2,7 @@ import { useEffect } from "react";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import BigNumber from "bignumber.js";
-import {
-  Button,
-  ButtonVariant,
-  InfoBlock,
-  TextLink,
-} from "@stellar/design-system";
+import { Button, InfoBlock, TextLink } from "@stellar/design-system";
 
 import { ReactComponent as IconSend } from "assets/svg/icon-send.svg";
 import { Avatar } from "components/Avatar";
@@ -144,14 +139,14 @@ export const ConfirmTransaction = ({
         <>
           <Button
             onClick={handleSend}
-            icon={<IconSend />}
+            iconLeft={<IconSend />}
             disabled={status === ActionStatus.PENDING}
           >
             Submit transaction
           </Button>
           <Button
             onClick={onBack}
-            variant={ButtonVariant.secondary}
+            variant={Button.variant.secondary}
             disabled={status === ActionStatus.PENDING}
           >
             Back

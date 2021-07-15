@@ -1,0 +1,33 @@
+.CopyWithTooltip {
+  --CopyWithTooltip-visibility: "hidden";
+
+  position: relative;
+  display: inline-block;
+
+  &__tooltip {
+    visibility: var(--CopyWithTooltip-visibility);
+    padding: 0.5rem 1rem;
+    // TODO: hard coded color
+    background-color: #292d3e;
+    position: absolute;
+    top: 2.7rem;
+    right: -1rem;
+    max-width: 16.875rem;
+    border-radius: 0.125rem;
+    color: var(--pal-brand-primary-on);
+    font-size: var(--font-size-secondary);
+    line-height: 1.5em;
+    z-index: var(--z-index-tooltip);
+    cursor: default;
+
+    &--bottom {
+      right: 50%;
+      transform: translateX(50%);
+    }
+
+    &--right {
+      top: 50%;
+      transform: translate(100%, -50%);
+    }
+  }
+}

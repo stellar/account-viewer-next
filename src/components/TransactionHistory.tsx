@@ -4,12 +4,7 @@ import styled, { css } from "styled-components";
 import { Horizon } from "stellar-sdk";
 import { useDispatch } from "react-redux";
 import { BigNumber } from "bignumber.js";
-import {
-  Heading2,
-  TextButton,
-  TextButtonVariant,
-  TextLink,
-} from "@stellar/design-system";
+import { Heading2, TextLink } from "@stellar/design-system";
 import { Types } from "@stellar/wallet-sdk";
 
 import {
@@ -277,13 +272,8 @@ export const TransactionHistory = () => {
   const isUnfunded = account.isUnfunded;
   const dispatch = useDispatch();
   const [showAllTxs, setShowAllTxs] = useState(false);
-  const {
-    status,
-    data,
-    isTxWatcherStarted,
-    errorString,
-    hasMoreTxs,
-  } = txHistory;
+  const { status, data, isTxWatcherStarted, errorString, hasMoreTxs } =
+    txHistory;
 
   const { errorMessage } = useErrorMessage({ initialMessage: errorString });
 
@@ -351,12 +341,13 @@ export const TransactionHistory = () => {
                 showAllTxs ? "Including" : "Hiding"
               } payments smaller than 0.5 XLM`}{" "}
             </span>
-            <TextButton
+            <TextLink
+              role="button"
               onClick={() => setShowAllTxs(!showAllTxs)}
-              variant={TextButtonVariant.secondary}
+              variant={TextLink.variant.secondary}
             >
               {showAllTxs ? "Hide small payments" : "Show all"}
-            </TextButton>
+            </TextLink>
           </TxToggleLinkEl>
         )}
       </HeadingRowEl>

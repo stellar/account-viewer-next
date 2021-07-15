@@ -1,0 +1,34 @@
+.WalletButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  min-width: 250px;
+
+  button {
+    flex: 1;
+    border: 1px solid var(--pal-border-primary);
+    border-radius: 0.25rem;
+    background-color: var(--pal-background-primary);
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    svg {
+      height: 1.5rem;
+      width: 1.5rem;
+      margin-right: 0.75rem;
+      fill: var(--pal-text-primary);
+    }
+  }
+
+  span {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: var(--pal-text-primary);
+    padding-top: 0.1875rem;
+  }
+}

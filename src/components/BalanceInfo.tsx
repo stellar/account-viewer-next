@@ -158,7 +158,7 @@ export const BalanceInfo = () => {
                 setIsSendTxModalVisible(true);
                 logEvent("send: clicked start send");
               }}
-              icon={<IconSend />}
+              iconLeft={<IconSend />}
               disabled={
                 isUnfunded || flaggedAccountsStatus !== ActionStatus.SUCCESS
               }
@@ -170,7 +170,7 @@ export const BalanceInfo = () => {
                 setIsReceiveTxModalVisible(true);
                 logEvent("receive: clicked receive");
               }}
-              icon={<IconReceive />}
+              iconLeft={<IconReceive />}
             >
               Receive
             </Button>

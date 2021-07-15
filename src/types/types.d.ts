@@ -151,7 +151,7 @@ export type StoreKey = keyof Store;
 
 export interface WalletData {
   title: string;
-  logoImg: string;
+  logoSvg: React.ReactNode;
   logoImgAltText: string;
   modalType: ModalType;
   infoText: React.ReactNode | string;

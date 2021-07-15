@@ -1,4 +1,4 @@
-import { Button, ButtonVariant } from "@stellar/design-system";
+import { Button } from "@stellar/design-system";
 import { ModalContent } from "components/ModalContent";
 import { ErrorMessage } from "components/ErrorMessage";
 import { useRedux } from "hooks/useRedux";
@@ -18,7 +18,7 @@ export const FailedTransaction = ({
       buttonFooter={
         <>
           <Button onClick={onEditTransaction}>Edit Transaction</Button>
-          <Button onClick={onCancel} variant={ButtonVariant.secondary}>
+          <Button onClick={onCancel} variant={Button.variant.secondary}>
             Close
           </Button>
         </>

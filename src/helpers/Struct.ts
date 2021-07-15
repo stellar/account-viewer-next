@@ -16,7 +16,7 @@ const SKIPPING_PROPS = [
  * @param  {Object} mapping Any object.
  * @return {Proxy}          The dict proxy object.
  */
-export function Struct<T>(mapping: object): T {
+export const Struct = <T>(mapping: Record<string, unknown>): T => {
   const proxy = new Proxy(mapping, {
     get(target: any, name: string) {
       if (name === "toJSON") {
@@ -44,4 +44,4 @@ export function Struct<T>(mapping: object): T {
   });
 
   return proxy;
-}
+};

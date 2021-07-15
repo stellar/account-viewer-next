@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Button, ButtonVariant, TextLink } from "@stellar/design-system";
+import { Button, TextLink } from "@stellar/design-system";
 import { ModalContent } from "components/ModalContent";
 import { useRedux } from "hooks/useRedux";
 import { getNetworkConfig } from "helpers/getNetworkConfig";
@@ -29,7 +29,7 @@ export const SuccessfulTransaction = ({
       buttonFooter={
         <>
           <Button onClick={onRestartFlow}>Send another payment</Button>
-          <Button onClick={onCancel} variant={ButtonVariant.secondary}>
+          <Button onClick={onCancel} variant={Button.variant.secondary}>
             Close
           </Button>
         </>

@@ -1,7 +1,7 @@
-import { InfoBlock, InfoBlockVariant } from "@stellar/design-system";
+import { InfoBlock } from "@stellar/design-system";
 
 export const AccountIsUnsafe = () => (
-  <InfoBlock variant={InfoBlockVariant.warning}>
+  <InfoBlock variant={InfoBlock.variant.warning}>
     <p>
       The account you’re sending to is tagged as <strong>#unsafe</strong> on{" "}
       <a

@@ -1,42 +1,43 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Provider } from "react-redux";
+import { Layout } from "@stellar/design-system";
 
 import { store } from "config/store";
-import { GlobalStyle } from "components/GlobalStyle";
 import { Network } from "components/Network";
 import { PrivateRoute } from "components/PrivateRoute";
 import { Header } from "components/Header";
-import { Footer } from "components/Footer";
-import { PageContent } from "components/PageContent";
 import { Theme } from "components/Theme";
 
 import { Dashboard } from "pages/Dashboard";
 import { Landing } from "pages/Landing";
 import { NotFound } from "pages/NotFound";
 
+import "styles.scss";
+
 export const App = () => (
   <Provider store={store}>
     <Router>
       <Theme>
-        <GlobalStyle />
         <Network>
           <Header />
 
-          <PageContent>
-            <Switch>
-              <Route exact path="/">
-                <Landing />
-              </Route>
+          <Layout.Content>
+            <Layout.Inset>
+              <Switch>
+                <Route exact path="/">
+                  <Landing />
+                </Route>
 
-              <PrivateRoute exact path="/dashboard">
-                <Dashboard />
-              </PrivateRoute>
+                <PrivateRoute exact path="/dashboard">
+                  <Dashboard />
+                </PrivateRoute>
 
-              <Route component={NotFound} />
-            </Switch>
-          </PageContent>
+                <Route component={NotFound} />
+              </Switch>
+            </Layout.Inset>
+          </Layout.Content>
 
-          <Footer />
+          <Layout.Footer gitHubLink="https://github.com/stellar/account-viewer-v2" />
         </Network>
       </Theme>
     </Router>

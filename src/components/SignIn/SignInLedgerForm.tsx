@@ -2,13 +2,7 @@ import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
-import {
-  Button,
-  ButtonVariant,
-  InfoBlock,
-  Loader,
-  TextLink,
-} from "@stellar/design-system";
+import { Button, InfoBlock, Loader, TextLink } from "@stellar/design-system";
 import { KeyType } from "@stellar/wallet-sdk";
 import TransportWebUSB from "@ledgerhq/hw-transport-webusb";
 
@@ -131,7 +125,7 @@ export const SignInLedgerForm = ({ onClose }: ModalPageProps) => {
       buttonFooter={
         <>
           <Button onClick={handleConnect}>Connect with Ledger</Button>
-          <Button onClick={onClose} variant={ButtonVariant.secondary}>
+          <Button onClick={onClose} variant={Button.variant.secondary}>
             Cancel
           </Button>
         </>
